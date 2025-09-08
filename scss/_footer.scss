@@ -6,7 +6,7 @@
    background-color: g.$gray;
    color: g.$white;
    &__inner{
-       margin: 0 5.33vw;//20px
+     margin: 0 5.33vw;//20px
    }
    &__logo--sp{
      margin-top: 12.26vw;//46px
@@ -16,27 +16,27 @@
      width: 66.4vw;//249px
    }
    &__title{
-    font-size: 3.73vw;
-    font-family: g.$fontLato;
-    font-weight: 600;//Latoはセミボールドがないので、600で指定。環境依存になる。
-    font-weight: 700;
+     font-size: 3.73vw;
+     font-family: g.$fontLato;
+     font-weight: 600;//Latoはセミボールドがないので、600で指定。環境依存になる。
+     font-weight: 700;
    }
    &__title--uppercase{
      text-transform: uppercase;
    }
    &__text{
-    font-family: g.$fontLato;
-    font-size: 3.2vw; //12px
+     font-family: g.$fontLato;
+     font-size: 3.2vw; //12px
    }
    &__nav--uppercase{
      text-transform: uppercase;
    }
    &__menulist{
-    color: white;
-    display: flex;
-    gap: 5.07vw;//19px
-    font-size: 3.2vw;//12px
-    >li{
+     color: white;
+     display: flex;
+     gap: 5.07vw;//19px
+     font-size: 3.2vw;//12px
+     >li{
         text-align: center;
         position: relative;
         &:not(:first-child)::before {
