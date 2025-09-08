@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Noto Sans JP", sans-serif;
+    src: url('../../assets/fonts/Noto_Sans_JP/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Lato", sans-serif;
+    src: url('../../assets/fonts/Lato/Lato-Bold.ttf') format('truetype'),
+    url('../../assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+}
+
+//fontfamily
+$fontNSansJP: "Noto Sans JP", sans-serif;
+$fontLato: "Lato", sans-serif;
+
+//fontsize
+$regular: 400;/*regular*/
+$medium: 500;/*Medium*/
+$bold: 700;/*Bold*/

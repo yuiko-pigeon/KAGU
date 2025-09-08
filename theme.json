@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "spacing": {
+      "margin": true,
+      "blockGap": true,
+      "units": [ "px", "em", "rem", "vw", "%" ], 
+      "spacingSizes": [
+        {
+          "slug": "vw-xsmall",
+          "size": "2.67vw",
+          "name": "xSmall (2.67vw)-10px"
+        },
+        {
+            "slug": "vw-small",
+            "size": "3,2vw",
+            "name": "small (3.2vw)-12px"
+          },
+        {
+          "slug": "vw-medium",
+          "size": "4.27vw",
+          "name": "Medium (4.27vw)-16px"
+        },
+        {
+          "slug": "vw-large",
+          "size": "5.33vw",
+          "name": "Large (5.33vw)-20px"
+        },
+        {
+          "slug": "vw-xlarge",
+          "size": "8.53vw",
+          "name": "xLarge (8.53vw)-32px"
+        },
+        {
+          "slug": "vw-xxlarge",
+          "size": "12.26vw",
+          "name": "xxLarge (12.26vw)-46px"
+        },
+        {
+          "slug": "vw-xxxlarge",
+          "size": "13.35vw",
+          "name": "xxxLarge (13.35vw)-50px"
+        }
+      ]
+    },
+    "blocks": {
+      "core/image": {
+        "spacing": {
+          "margin": true
+        }
+      }
+    },
+    "core/columns": {
+      "spacing": {
+        "blockGap": true
+      }
+    },
+    "core/grid": {
+      "spacing": {
+        "blockGap": true
+      }
+    },
+    "typography": {
+      "lineHeight": true
+  }
+    }
+  }

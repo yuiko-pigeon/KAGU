@@ -1,0 +1,125 @@
+@use "./global/index" as g;
+
+.header{
+    position: relative;
+    &__mainvisual{
+        width: 100%;
+    }
+    &__logo{
+        width: 8.8vw;//33px
+        height: 100%;
+        vertical-align: middle;
+    }
+    &__title{
+        text-transform: uppercase;
+        padding-left: 5.33vw;
+    }
+    &__nav{
+        position: fixed;
+        top: 4.2vw;//16px
+    }
+    &__nav-titlearea{
+            display: flex;
+            justify-content: space-between;
+            width: 95vw;//355px
+            height: 11vw;
+            background-color: #fff;
+            position: absolute;
+            top: 4.2vw;//16px
+            left: 2.66vw;//10px
+            align-items: center;
+            z-index: 999;
+    }
+    &__hamburger{
+        display: block;
+        content: "";
+        background-color: g.$black;
+        width: 4.53vw;
+        position: relative;
+        &:before{
+            position: absolute;
+            top:-0.8vw;//3px
+            height: 0.267vw;
+            right:6.4vw;//24px
+            content: "";
+            background-color: g.$black;
+            width: 4.53vw;
+        }
+        &:after{
+            position: absolute;
+            top:0.8vw;//3px
+            height: 0.267vw;//1px
+            right:6.4vw;
+            content: "";
+            background-color: g.$black;
+            width: 4.53vw;
+        }
+    }
+    &__drawer{
+        width: 95vw;//355px
+        height: 87.2vw;//327px
+        background-color: g.$white;
+        position: absolute;
+        top: 4.2vw;//16px
+        left: 2.66vw;//10px
+        align-items: center;
+        padding-top: 11vw;
+    }
+    &__intro{
+        width: 76.27vw;
+        height: 25.6vw;
+        position: absolute;
+        left: 6.1vw;
+        top: 136.4vw;
+    }
+    &__intro-title{
+        font-size: 9.86vw;//37px
+        font-family: g.$fontNSansJP;
+        font-weight: g.$bold;
+        width: auto;
+        letter-spacing: 0.21vw;//0.8px
+        line-height: 12.8vw;//48px
+        color: #fff;
+    }
+    &__intro--small{
+        position: absolute;
+        width: 73.6vw;
+        height: 11.2vw;//42px
+        left: 6vw;
+        top: 168vw;
+    }
+    &__intro-text{
+        font-size: 3.7vw;//14px
+        font-family: g.$fontNSansJP;
+        font-weight: g.$medium;
+        color: #fff;
+        line-height: 5.6vw;//21px
+        letter-spacing: -0.06vw;//-0.56px
+        font-weight: g.$medium;
+    }
+    &__scroll{
+        display: flex;
+        width: 29.6vw;//111px
+        height: 5.33vw;//20px
+        position: absolute;
+        top: 200vw;//751px
+        left: 5.3vw;//20px
+        align-items: center;
+        gap: 2.13vw;//8px
+    }
+    &__scroll-dot{
+        width: 5.33vw;
+        height: 5.33vw;
+        border-radius: 50%;
+        background-color: g.$white;
+    }
+    &__scroll-text{
+        font-family: g.$fontLato;
+        font-size: 4.27vw;
+        color: g.$white;
+        width: 22.1vw;//83px
+        line-height: 4.27vw;//16px
+        height: 4.27vw;//16px
+        font-weight: g.$bold;
+    }
+}

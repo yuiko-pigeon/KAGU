@@ -1,0 +1,7 @@
+$pc:767px;
+
+@mixin pc {
+    @media screen and (min-width: ($pc)) {
+      @content;
+    }
+  }

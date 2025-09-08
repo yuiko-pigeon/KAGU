@@ -1,0 +1,67 @@
+@use "./global/index" as g;
+
+.about{
+    &__title{
+        font-family: g.$fontLato;
+        font-weight: g.$bold;
+        line-height: 3.73vw;//14px
+        font-size: 3.73vw;
+        text-transform: uppercase;
+    }
+    &__lead{
+        font-size: 6.4vw;//24px
+        font-weight: g.$medium;
+        line-height: 9.6vw;//36px;
+        // letter-spacing: 0.256vw; 
+    }
+    &__text{
+        font-weight: g.$regular;
+        font-size: 3.73vw;//14px
+        line-height: 6.72vw;//25.2px
+        margin-top: 3.73vw;//14px
+        letter-spacing: 0.027vw;//0.1px
+    }
+    &__title--top-margin{
+        margin-top: 22.9vw;//86px
+    }
+    &__images--top-margin{
+        margin-top: 16vw;//60px
+    }
+    // &__margin--top-small{
+    //     margin-top: 14.9vw;//56px
+    // }
+    &__title--bottom-margin{
+        margin-bottom: 4.27vw;//16px
+    }
+    &__images{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10.1vw;//38px
+    }
+    &__figure--small{
+        text-align: start;
+    }
+    &__figure--large{
+        text-align: end;
+    }
+    &__image--small{
+        width: 65.6vw;//246px
+        height: 48.8vw;//183px
+    }
+    &__image--large{
+        width: 65.6vw;
+        height: 87.2vw;//327px
+        object-fit: cover;
+    }
+    &__emphasis{
+        width: 100%;
+    }
+    &__emphasis-text{
+        font-family: g.$fontLato;
+        font-size: 23.5vw;//88px
+        font-weight: g.$bold;
+        text-wrap: nowrap;
+        overflow-x: scroll;
+    }
+}

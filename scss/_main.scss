@@ -1,0 +1,6 @@
+@use "./global/index" as g;
+
+.main{
+    font-family: g.$fontNSansJP;
+    color: g.$black;
+}
