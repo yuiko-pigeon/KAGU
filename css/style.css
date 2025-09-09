@@ -759,13 +759,31 @@ th {
 }
 .header__drawer {
   width: 95vw;
-  height: 87.2vw;
+  height: auto;
   background-color: #fff;
   position: absolute;
   top: 4.2vw;
   left: 2.66vw;
   align-items: center;
   padding-top: 11vw;
+}
+.header__drawer > ul {
+  width: 84vw;
+  margin: 0 auto;
+  padding-top: 3.47vw;
+}
+.header__drawer > ul > li {
+  height: 13.33vw;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #d7d7d7;
+}
+.header__drawer > ul > li:last-child {
+  border-bottom: none;
+}
+.header__drawer > ul > li > a {
+  text-transform: uppercase;
+  font-size: 3.73vw;
 }
 .header__intro {
   width: 76.27vw;

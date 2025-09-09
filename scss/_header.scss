@@ -57,13 +57,31 @@
     }
     &__drawer{
         width: 95vw;//355px
-        height: 87.2vw;//327px
+        height: auto;//87.2vw;(327px)からautoへ変更
         background-color: g.$white;
         position: absolute;
         top: 4.2vw;//16px
         left: 2.66vw;//10px
         align-items: center;
         padding-top: 11vw;
+        >ul{
+            width: 84vw;//315px
+            margin: 0 auto;
+            padding-top: 3.47vw;//13px
+            >li{
+                height: 13.33vw;//50px
+                align-items: center;
+                display: flex;
+                border-bottom: 1px solid g.$whitegray;
+                &:last-child{
+                    border-bottom: none;
+                }
+                >a{
+                    text-transform: uppercase;
+                    font-size: 3.73vw;//14px
+                }
+            }
+        }
     }
     &__intro{
         width: 76.27vw;
