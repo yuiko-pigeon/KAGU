@@ -4,19 +4,41 @@
     position: relative;
     &__mainvisual{
         width: 100%;
+        @include g.pc{
+            display: none;
+        }
+    }
+    &__mainvisual-pc{
+        display: none;
+        @include g.pc{
+            display: block;
+            width: 100%;
+        }
     }
     &__logo{
         width: 8.8vw;//33px
         height: 100%;
-        vertical-align: middle;
+        vertical-align: baseline;
+        @include g.pc{
+            width: clamp(3.3rem, 3.67vw, 4.43rem);
+            vertical-align: middle;
+        }
     }
     &__title{
         text-transform: uppercase;
         padding-left: 5.33vw;
+        @include g.pc{
+            margin-left: 1.11vw;//16px
+            padding: 0;
+        }
     }
     &__nav{
         position: fixed;
         top: 4.2vw;//16px
+        z-index: 999;//1
+        @include g.pc{
+            top: 0;
+        }
     }
     &__nav-titlearea{
             display: flex;
@@ -28,31 +50,99 @@
             top: 4.2vw;//16px
             left: 2.66vw;//10px
             align-items: center;
-            z-index: 999;
+            z-index: 999;//1
+            border: solid 1px g.$whitegray;
+            @include g.pc{
+                width: 95.7vw;
+                height: clamp(52px, 3.82vw, 55px);
+                font-size: clamp(0.725rem,0.972vw,0.875rem);//14px
+                top: 1.5rem;
+                left: 2.08vw;
+            }
+    }
+    &__navitem{
+        display: none;
+        @include g.pc{
+            display:block;
+            width: clamp(15.56rem, 20.69vw, 18.75rem);
+        };
+    }
+    &__nav-button{
+        display: none;
+        @include g.pc{
+            display:block;
+            font-size: clamp(0.725rem,0.833vw,0.75rem);//12px
+            width: clamp(6.75rem,7.5vw,6.8rem);
+            height: 74.5%;
+            border: solid 1px g.$whitegray;
+            margin-right: 0.417vw;
+        };
+    }
+    &__navitem-last{
+        display:none;
+        @include g.pc{
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            &::after{
+                content:url("../picture/arrow.svg");
+                display: inline;
+                width: 0.54vw;//7.77px
+                height: 0.48vw;//6.91px
+                vertical-align: text-bottom;
+                color: g.$black;
+                margin-left: 0.69vw;//10px
+            }
+        }
+    }
+    &__menulist-pc{
+        @include g.pc{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.39vw;//
+            text-transform: uppercase;
+        }
     }
     &__hamburger{
         display: block;
         content: "";
-        background-color: g.$black;
         width: 4.53vw;
+        height: 4.53vw;
+        right: 6.4vw;//24px
+        padding: 2.13vw 0; // (4.53 - 0.267) ÷ 2 ≈ 2.13vw
         position: relative;
+        cursor: pointer;
         &:before{
             position: absolute;
-            top:-0.8vw;//3px
+            top:1.47vw;
             height: 0.267vw;
-            right:6.4vw;//24px
             content: "";
             background-color: g.$black;
             width: 4.53vw;
+            transition: all 0.3s ease-out;
         }
         &:after{
             position: absolute;
-            top:0.8vw;//3px
+            top:2.6vw;//10.57px
             height: 0.267vw;//1px
-            right:6.4vw;
             content: "";
             background-color: g.$black;
             width: 4.53vw;
+            transition: all 0.3s ease-out;
+        }
+        @include g.pc{
+            display: none;
+        }
+    }
+    &__hamburger--active {
+        &:before {
+            top:1.47vw;
+            transform: rotate(45deg);
+        }
+        &:after {
+            top:1.47vw;
+            transform: rotate(-45deg);
         }
     }
     &__drawer{
@@ -64,25 +154,52 @@
         left: 2.66vw;//10px
         align-items: center;
         padding-top: 11vw;
-        padding-bottom: 7.73vw;//29px
+        overflow: hidden; // ← 必須
+        max-height: 0;    // ← 初期状態は閉じてる
+        transition: max-height 1s ease-out;
         >ul{
             width: 84vw;//315px
             margin: 0 auto;
             padding-top: 3.47vw;//13px
+            -webkit-text-stroke: 0.5px g.$black;
             >li{
                 height: 13.33vw;//50px
                 align-items: center;
                 display: flex;
                 border-bottom: 1px solid g.$whitegray;
                 &:last-child{
+                    margin-bottom: 7.73vw;
                     border-bottom: none;
+                    >a{
+                        &::after{
+                            content:url("../picture/arrow.svg");
+                            display: inline;
+                            width: 2.07vw;//7.77px
+                            height: 1.84vw;//6.91px
+                            vertical-align: text-bottom;
+                            color: g.$black;
+                            margin-left: 2.6vw;//10px
+                        }
+                    }
                 }
                 >a{
                     text-transform: uppercase;
                     font-size: 3.73vw;//14px
+                    font-family: g.$fontLato;
+                    font-weight: g.$medium;
+                    color: g.$black;
                 }
             }
         }
+        @include g.pc{
+            display: none;
+        }
+    }
+    &__drawer-open{
+        max-height: 100vh;
+    }
+    &__intro-area{
+        transition: filter 1s ease-out;
     }
     &__intro{
         width: 76.27vw;
@@ -118,27 +235,31 @@
     }
     &__scroll{
         display: flex;
-        width: 29.6vw;//111px
-        height: 5.33vw;//20px
+        width: 7.9375rem;//127px
+        height: 1.25rem;//20px
         position: absolute;
         top: 200vw;//751px
         left: 5.3vw;//20px
         align-items: center;
-        gap: 2.13vw;//8px
+        gap: 0.5rem;//8px
+        @include g.pc{
+            left: auto;
+            right: 2.125rem;//34px
+            top: 54.9vw;//790px
+        }
     }
     &__scroll-dot{
-        width: 5.33vw;
-        height: 5.33vw;
+        width: 1.25rem;
+        height: 1.25rem;
         border-radius: 50%;
         background-color: g.$white;
     }
     &__scroll-text{
         font-family: g.$fontLato;
-        font-size: 4.27vw;
+        font-size: 1rem;
         color: g.$white;
-        width: 22.1vw;//83px
-        line-height: 4.27vw;//16px
-        height: 4.27vw;//16px
+        width: 9.125rem;//98px
+        line-height: 1;//16px
         font-weight: g.$bold;
     }
 }

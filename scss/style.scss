@@ -1,6 +1,8 @@
 @use "wrapper";
 @use "about";
 @use "main";
-@use "is-style";//WordPressブロックスタイリング用
+@use "is-style";//WordPressスタイリング用
 @use "footer";
-@use "header"
+@use "header";
+@use "body";
+@use "js";

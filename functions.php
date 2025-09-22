@@ -26,10 +26,11 @@ add_action('wp_enqueue_scripts','my_enqueue_assets');
 
 add_action('after_setup_theme',function(){
     register_nav_menus( array(
-        'header' => 'ヘッダーのメニュー',
+        'header-pc' => 'ヘッダーのメニュー',
         'hamburger' => 'ハンバーガーメニュー',
         'footer' => 'フッターメニュー',
         'footer-sns' => 'フッターSNSメニュー',
+        'footer-pc' => 'フッターPCメニュー'
     ));
 });
 
@@ -187,6 +188,13 @@ function custom_block_styles() {
         array(
             'name'         => 'gallery', // スタイル名
             'label'        => 'galleryセクション' // スタイルの表示名
+        )
+    );
+    register_block_style(
+        'core/figure', // ブロック名
+        array(
+            'name'         => 'figure__pudding-bottom', // スタイル名
+            'label'        => '３つ目の画像下の余白を０に(PC)' // スタイルの表示名
         )
     );
 }
