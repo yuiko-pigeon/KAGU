@@ -35,10 +35,11 @@
             column-gap: 1.49vw;//20px
         }
         p{
+            font-size: 2.7vw;
             letter-spacing: -0.027vw !important;
             margin-top: 0.438rem;//7px
             @include g.pc{
-                font-size: 0.83vw !important;//12px
+                font-size: 0.83vw ;//12px
                 letter-spacing: -0.0083vw !important;
                 margin-top: 0.625rem;//10px
             }
@@ -55,6 +56,12 @@
             margin-top: 0;
             >div:nth-child(1){
                 margin-left: 9.51vw !important;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                >.is-style-section__text{
+                    margin-left: 0px !important;
+                }
             }
             >figure{
                 margin-left: 0 !important;
@@ -99,7 +106,7 @@
 .is-style-gallery{
     padding: 0 !important;
     >h2{
-        margin: 0 5.33vw !important;//20px;
+        margin: 0 5.33vw 8.5vw !important;//20px;
         @include g.pc{
             font-size: 1.11vw !important;//1rem
             margin-bottom: 5.56vw !important; //80px
@@ -177,9 +184,11 @@
             margin-top: 6.875vw;
         }
         >div:nth-child(1){
-            flex-grow: unset !important;
-            width: 31.04vw;
-            height: 23.06vw;
+            @include g.pc{
+                flex-grow: unset !important;
+                width: 31.04vw;
+                height: 23.06vw;
+            }
         }
     }
     &__image--before{
@@ -333,27 +342,33 @@
 
 .is-style-spacer{
     height: 9.87vw;//
+    &__xlarge{
+        height: 32.37vw;
+        @include g.pc{
+            height: 9.72vw;//140px
+        }
+    }
     &__large{
         height: 21.3vw;//80px
         @include g.pc{
-            height: 8.47vw !important;//122px
+            height: 8.47vw ;//122px
             margin-top: 0 !important;
         }
     }
     &__top{
         height: 22.9vw;//86px
         @include g.pc{
-            height: 10.41vw !important;//150px
+            height: 10.41vw ;//150px
         }
     }
     &__top--small{
         height: 14.4vw;//54px
     }
     &__top--xsmall{
-        height: 14.9vw;//56px
-    }
-    &__top--xxsmall{
-        height: 13.1vw//49vw
+        height: 10.67vw;//40px
+        @include g.pc{
+            height: 6.94vw
+        }
     }
 }
 
@@ -389,7 +404,7 @@
                 margin-right: 9.93%;
                 p{
                     width: 100%;
-                    font-size: clamp(1.36rem,1.67vw,1.5rem);
+                    font-size: clamp(1.36rem,1.67vw,1.5rem) !important;
                     letter-spacing: 0.06rem;//4%
                     line-height: 1.4;
                     padding-top: 0;
@@ -450,8 +465,9 @@
         }
         >div:last-child{
             display: block;
+            height: 10.4vw !important;//39px
             @include g.pc{
-                height: 10.42vw !important;
+                height: 10.42vw !important;//150px
             }
         }
     }

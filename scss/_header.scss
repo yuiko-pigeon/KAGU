@@ -209,6 +209,12 @@
         position: absolute;
         left: 6.1vw;
         top: 136.4vw;
+        @include g.pc{
+            left: 2.08vw;
+            width: 32.36vw;
+            height: 10.69vw;
+            top: 40.625vw;
+        }
     }
     &__intro-title{
         font-size: 9.86vw;//37px
@@ -218,6 +224,15 @@
         letter-spacing: 0.21vw;//0.8px
         line-height: 12.8vw;//48px
         color: #fff;
+        @include g.pc{
+            font-size: 4.44vw;
+            white-space: nowrap;
+            letter-spacing: 0.177vw;
+            line-height: 1.2;
+            display: inline-block;
+            color: #fff;
+            width: 100%;
+        }
     }
     &__intro--small{
         position: absolute;
@@ -225,7 +240,13 @@
         height: 11.2vw;//42px
         left: 6vw;
         top: 168vw;
-    }
+        @include g.pc{
+            width: 19.17vw;
+            height: 2.92vw;
+            left: 2.08vw;
+            top: 53.33vw;
+            }
+        }
     &__intro-text{
         font-size: 3.7vw;//14px
         font-family: g.$fontNSansJP;
@@ -234,10 +255,18 @@
         line-height: 5.6vw;//21px
         letter-spacing: -0.06vw;//-0.56px
         font-weight: g.$medium;
+        @include g.pc{
+            font-size: clamp(0.63rem, 0.972vw, 100rem);
+            line-height: 1.5;
+            letter-spacing: 0.0389vw;
+            display: inline-block;
+            width: 100%;
+            white-space: nowrap;
+        }
     }
     &__scroll{
         display: flex;
-        width: 7.9375rem;//127px
+        width: 6.94rem;//111px
         height: 1.25rem;//20px
         position: absolute;
         top: 200vw;//751px
@@ -255,12 +284,23 @@
         height: 1.25rem;
         border-radius: 50%;
         background-color: g.$white;
+        position: relative;
+        &::after{
+            content: "";
+            width: 0.25rem;
+            height: 0.25rem;
+            border-radius: 50%;
+            background-color: #222222;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+        }
     }
     &__scroll-text{
         font-family: g.$fontLato;
         font-size: 1rem;
         color: g.$white;
-        width: 9.125rem;//98px
+        width: 5.19rem;//98px
         line-height: 1;//16px
         font-weight: g.$bold;
     }

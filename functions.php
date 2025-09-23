@@ -16,11 +16,19 @@ function my_enqueue_assets(){
     wp_enqueue_style('style',get_theme_file_uri('/css/style.css'),array(),'1.0.0','all');
     wp_enqueue_script('jquery',get_theme_file_uri('/js/jquery-3.7.1.slim.min.js'),'','3.7.1',false);
     wp_enqueue_script('main',get_theme_file_uri('/js/main.js'),'jquery','',true);
-    
+    wp_enqueue_style('noto-sans','https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap',array(),null);
+    wp_enqueue_style('Lato','https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap',array(),null);
 
     wp_localize_script('main', 'wpData', [
         'isFrontPage' => is_front_page()
       ]);
+
+    // preconnectをwp_headに追加
+    add_action('wp_head', function() {
+        echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+        echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+    }, 5);
+
 }
 add_action('wp_enqueue_scripts','my_enqueue_assets');
 
@@ -151,8 +159,8 @@ function custom_block_styles() {
     register_block_style(
         'core/spacer', // ブロック名
         array(
-            'name'         => 'spacer__top--xxsmall', // スタイル名
-            'label'        => 'product gallery上余白' // スタイルの表示名
+            'name'         => 'spacer__xlarge', // スタイル名
+            'label'        => 'product gallery title上余白' // スタイルの表示名
         )
     );
     register_block_style(
