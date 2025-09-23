@@ -172,13 +172,15 @@
                     border-bottom: none;
                     >a{
                         &::after{
-                            content:url("../picture/arrow.svg");
-                            display: inline;
-                            width: 2.07vw;//7.77px
-                            height: 1.84vw;//6.91px
-                            vertical-align: text-bottom;
-                            color: g.$black;
-                            margin-left: 2.6vw;//10px
+                            content: "";
+                            display: inline-block;
+                            background-image: url(../picture/arrow.svg);
+                            width: 4.66vw;
+                            height: 3.5vw;
+                            margin-left: 2.6vw;
+                            background-repeat: no-repeat;
+                            background-size: 1.64vw;
+                            background-position-y: 80%;
                         }
                     }
                 }

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener("resize", function() {
         if (window.innerWidth >= 767) {
-          hamburger.classList.remove("header__hamburger-active");
+          hamburger.classList.remove("header__hamburger--active");
           body.classList.remove("body__scroll-none");
           drawer.classList.remove("header__drawer-open"); 
           

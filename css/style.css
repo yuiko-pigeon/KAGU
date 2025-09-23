@@ -1373,13 +1373,15 @@ th {
   border-bottom: none;
 }
 .header__drawer > ul > li:last-child > a::after {
-  content: url("../picture/arrow.svg");
-  display: inline;
-  width: 2.07vw;
-  height: 1.84vw;
-  vertical-align: text-bottom;
-  color: #222222;
+  content: "";
+  display: inline-block;
+  background-image: url(../picture/arrow.svg);
+  width: 4.66vw;
+  height: 3.5vw;
   margin-left: 2.6vw;
+  background-repeat: no-repeat;
+  background-size: 1.64vw;
+  background-position-y: 80%;
 }
 .header__drawer > ul > li > a {
   text-transform: uppercase;
