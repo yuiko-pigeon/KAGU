@@ -7,21 +7,40 @@
         transform: translateX(-50%); 
       }
 }
+
 //カスタムエディタスタイル用
 .is-style-about {
-    >h2:nth-child(2){
-        @include g.pc{
-            margin-left: 10.21vw !important;
+    >div:nth-child(2){
+        >h2{
+            @include g.pc{
+                margin-left: 10.21vw !important;
+            }
         }
-    }
-    >h2.has-text-align-center:nth-child(2){
+        >h2.has-text-align-center{
         @include g.pc{
             margin-left: 0 !important;
+        }
         }
     }
     >div:nth-child(3){
         @include g.pc{
             margin-left: 10.21vw !important;
+        }
+    }
+    >div:nth-child(3).is-style-section__lead-area-center{
+        height: 19.2vw;
+        overflow: hidden;
+        margin-top: 4.27vw !important;
+        @include g.pc{
+            height: clamp(0.625rem, 3.33vw, 3rem) !important;
+            margin-left: 0 !important;
+            margin-top: 1.39vw !important;
+        }
+    }
+    &__textarea-bottom>.is-style-section__lead-area{
+            height: calc(6.4vw*1.5) !important;
+        @include g.pc{
+            height: clamp(0.625rem, 3.33vw, 3rem) !important
         }
     }
     
@@ -34,21 +53,45 @@
             margin: 6.94vw 2.08vw 0 !important;//100px 20px
             column-gap: 1.49vw;//20px
         }
-        p{
-            font-size: 2.7vw;
-            letter-spacing: -0.027vw !important;
-            margin-top: 0.438rem;//7px
+        figure{
+            height: auto;
+            width: 41.87vw;
+            max-width: 100%;
+            overflow: hidden;
             @include g.pc{
-                font-size: 0.83vw ;//12px
-                letter-spacing: -0.0083vw !important;
-                margin-top: 0.625rem;//10px
+                width: 22.92vw;;
             }
+            img{
+                transition: all 0.6s ease-out;
+                }
+            p{
+                font-size: 2.7vw;
+                letter-spacing: -0.027vw !important;
+                margin-top: 0.438rem;//7px
+                transition: all 0.6s ease-out;
+                @include g.pc{
+                    font-size: 0.83vw ;//12px
+                    letter-spacing: -0.0083vw !important;
+                    margin-top: 0.625rem;//10px
+                }
+            }  
         }
+        >div>div:hover { //Productのgrid形式galleryの挙動
+            img {
+              transform: scale(1.25);
+            }
+            p{
+              color: g.$clearwhite !important;// または 0 で完全に消す
+            }
+          }
     }
     &:where(.wp-block-group.has-background){
         padding: 0 !important;
     }
     >div:nth-child(6){
+        >figure{
+            opacity: 0;
+        }
         @include g.pc{
             display: flex;
             flex-direction: row-reverse;
@@ -105,12 +148,17 @@
 }
 .is-style-gallery{
     padding: 0 !important;
-    >h2{
+    >div:nth-child(2){
         margin: 0 5.33vw 8.5vw !important;//20px;
         @include g.pc{
-            font-size: 1.11vw !important;//1rem
             margin-bottom: 5.56vw !important; //80px
-
+            margin-left: 2.08vw !important;
+        }
+        >h2{
+            font-size: 3.73vw;
+            @include g.pc{
+                font-size: clamp(0.625rem,1.11vw,1rem) !important;//1rem
+            }
         }
     }
     >.is-layout-grid{
@@ -122,6 +170,7 @@
             row-gap: 9.72vw;//140px
             >figure{
                 margin-bottom: 0 !important;
+                opacity: 0;
             }
             >figure:nth-child(1){
                 margin-left: 2.08vw;
@@ -195,6 +244,7 @@
         text-align: start;
     }
     &__image--small{
+        opacity: 0;
         @include g.pc{
             width: 100%;//447px
             height: auto;//332px
@@ -216,6 +266,7 @@
     }
     &__image--big{
         text-align: end;
+        opacity: 0;
         @include g.pc{
             width: 100%;
             flex: unset !important;
@@ -240,6 +291,7 @@
         font-size: 3.73vw;
         text-transform: uppercase;
         margin-bottom: 4.27vw;//16px
+        transform: translateY(100%);
         @include g.pc{
             font-size: clamp(0.625rem,1.11vw,1rem);
             line-height: 1;
@@ -247,10 +299,19 @@
             margin-top: 0;
         }
     }
+    &__title-area{
+        overflow: hidden;
+        height: 3.73vw;
+        @include g.pc{
+            height: clamp(0.625rem, 1.11vw, 1rem);
+            max-width: none !important;
+        }
+    }
     &__lead{
         font-size: 6.4vw;//24px
         font-weight: g.$medium !important;
         line-height: 9.6vw;//36px;
+        transform: translateY(100%);
         // letter-spacing: 0.256vw; 
         @include g.pc{
             font-size: clamp(0.625rem,2.22vw,2rem) !important;
@@ -259,6 +320,13 @@
             >br{
                 display: none;
             }
+        }
+    }
+    &__lead-area{
+        overflow: hidden;
+        height: 19.2vw;
+        @include g.pc{
+            height: clamp(0.625rem, 3.33vw, 3rem) !important;
         }
     }
     &__br{
@@ -281,6 +349,7 @@
         line-height: 6.72vw;//25.2px
         margin-top: 3.73vw;//14px
         letter-spacing: 0.027vw;//0.1px
+        opacity: 0;
         @include g.pc{
             font-size: clamp(0.625rem,1.11vw,1rem);
             line-height: 1.8;
@@ -292,6 +361,7 @@
         @extend .is-style-section__text;
         letter-spacing: -0.133vw;
         margin-bottom: 20.3vw;//76px
+        opacity: 0;
         @include g.pc{
             font-size: 1rem;
             margin-top: 1.875vw;
@@ -309,6 +379,7 @@
     overflow: hidden;
     margin-top: 26.1vw;//98px
     margin-bottom: 23.2vw;//87px
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
     @include g.pc{
         margin-top: 9.02vw;//130px
         margin-bottom: 9.44vw;//136px
@@ -341,7 +412,7 @@
 }
 
 .is-style-spacer{
-    height: 9.87vw;//
+    height: 3.47vw !important;//13px
     &__xlarge{
         height: 32.37vw;
         @include g.pc{
@@ -349,9 +420,9 @@
         }
     }
     &__large{
-        height: 21.3vw;//80px
+        height: 21.3vw !important;//80px
         @include g.pc{
-            height: 8.47vw ;//122px
+            height: 8.47vw !important;//122px
             margin-top: 0 !important;
         }
     }
@@ -365,9 +436,9 @@
         height: 14.4vw;//54px
     }
     &__top--xsmall{
-        height: 10.67vw;//40px
+        height: 10.67vw !important;//40px
         @include g.pc{
-            height: 6.94vw
+            height: 6.94vw !important;
         }
     }
 }
@@ -395,10 +466,11 @@
             >div:nth-child(1) {
                 width: 20px;
                 p{
-                    letter-spacing: -0.00132rem;           
+                    letter-spacing: -0.00132rem;       
+                    padding-top: 0.486vw;
                 }
             }
-            >div:nth-child(2){
+            >div:nth-child(2) {
                 width: 32.4%;
                 margin-left: 15.5%;
                 margin-right: 9.93%;
@@ -439,6 +511,7 @@
             padding: 0 !important; 
         }
         >figure{
+            opacity: 0;
             padding: 6.7vw 0 9.07vw;//25px 34px
             @include g.pc{
                 padding: 2.29vw 0 5.21vw;

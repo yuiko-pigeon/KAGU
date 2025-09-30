@@ -1,4 +1,51 @@
-.js-blur{
-    filter: blur(5px);
+@keyframes inAnime {
+    to {
+        transform: translateY(0px);
+    }
 }
+@keyframes textAnime {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes imageAnime {
+    to {
+        opacity: 1;
+    }
+}
+
+.js {
+    &__blur {
+        filter: blur(5px);
+    }
+
+    &__footer-image{
+        opacity: 0;
+    }
+
+    &__menu-item{
+        transform: translateY(100%);
+        display: inline-block;
+    }
+
+    &__title-in {
+        animation: inAnime 1s 0.6s forwards ease-out;
+    }
+
+    &__text-appear {
+        animation: textAnime 0.5s 0.6s forwards ease-out;
+    }
+
+    &__image-appear {
+        animation: imageAnime 1.2s 1.8s forwards ease-out;
+    }
+
+    &__image-appearfast {
+        animation: imageAnime 1.2s 0.8s forwards ease-out;
+    }
+}
+
+    .js__menu-item.js__title-in::after {
+        width: 4.66vw;
+    }
 
