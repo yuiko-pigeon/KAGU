@@ -70,7 +70,8 @@
                 <div class="footer__image">
                     <img src="<?php echo get_theme_file_uri( 'picture/footer-pc.png' ); ?>" alt="木製の椅子の座面から脚が写っている写真" class="footer__image-pc js__footer-image">
                 </div>
-            </footer>
+            </section>
+        </footer>
         </div>
     </div>
     <?php wp_footer(); ?>

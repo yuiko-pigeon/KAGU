@@ -12,13 +12,15 @@
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-rows: auto auto auto;
-      margin: 0 2.08vw 1.25rem 2.14vw;
+      margin: 0 2.08vw 0 2.14vw;
+      padding-bottom: 1.25rem;
       }
    }
    &__logo{
-     margin-top: 12.26vw;//46px
+     padding-top: 12.26vw;//46px
      margin-bottom: 13.35vw;//50px
      @include g.pc{
+      padding-top: 0;
       margin-top: 0;
       margin-bottom: 9.17vw;
          grid-column: 1/2;
@@ -86,6 +88,7 @@
      text-transform: uppercase;
    }
    &__menulist{
+     font-family: g.$fontLato;
      color: white;
      display: flex;
      gap: 5.07vw;//19px
@@ -157,13 +160,14 @@
    &__copyright-area{
         display: flex;
         margin-top: 6.4vw;
-        margin-bottom: 7.73vw;
+        padding-bottom: 7.73vw;
         justify-content: space-between;
         @include g.pc{
             grid-column: 1/2;
             grid-row: 3/4;
             margin-bottom: 0;
             margin-top: 6.042vw;
+            padding-bottom: 0;
         }
    }
    &__copyright{

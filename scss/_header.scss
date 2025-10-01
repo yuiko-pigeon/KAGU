@@ -54,6 +54,7 @@
             border: solid 1px g.$whitegray;
             border-bottom: none;
             @include g.pc{
+                font-family: g.$fontLato;
                 width: 95.7vw;
                 height: clamp(52px, 3.82vw, 55px);
                 font-size: clamp(0.725rem,0.972vw,0.875rem);//14px
@@ -144,7 +145,7 @@
         &:before{
             position: absolute;
             top:1.47vw;
-            height: 0.267vw;
+            height: 1px;
             content: "";
             background-color: g.$black;
             width: 4.53vw;
@@ -153,7 +154,7 @@
         &:after{
             position: absolute;
             top:2.6vw;//10.57px
-            height: 0.267vw;//1px
+            height: 1px;//1px
             content: "";
             background-color: g.$black;
             width: 4.53vw;
@@ -342,7 +343,7 @@
             border-radius: 50%;
             background-color: #222222;
             position: absolute;
-            top:  var(--dot-top,0.5rem);
+            top:  var(--dot-top);
             right: 0.5rem;
         }
     }

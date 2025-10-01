@@ -644,6 +644,9 @@ th {
   margin-left: 5.33vw !important;
   margin-right: 5.33vw !important;
 }
+.is-style-gallery > .is-layout-grid > figure {
+  opacity: 0;
+}
 @media screen and (min-width: 767px) {
   .is-style-gallery > .is-layout-grid {
     margin-left: 0 !important;
@@ -652,7 +655,6 @@ th {
   }
   .is-style-gallery > .is-layout-grid > figure {
     margin-bottom: 0 !important;
-    opacity: 0;
   }
   .is-style-gallery > .is-layout-grid > figure:nth-child(1) {
     margin-left: 2.08vw;
@@ -1071,15 +1073,17 @@ th {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto auto;
-    margin: 0 2.08vw 1.25rem 2.14vw;
+    margin: 0 2.08vw 0 2.14vw;
+    padding-bottom: 1.25rem;
   }
 }
 .footer__logo {
-  margin-top: 12.26vw;
+  padding-top: 12.26vw;
   margin-bottom: 13.35vw;
 }
 @media screen and (min-width: 767px) {
   .footer__logo {
+    padding-top: 0;
     margin-top: 0;
     margin-bottom: 9.17vw;
     grid-column: 1/2;
@@ -1154,6 +1158,7 @@ th {
   text-transform: uppercase;
 }
 .footer__menulist {
+  font-family: "Lato", sans-serif;
   color: white;
   display: flex;
   gap: 5.07vw;
@@ -1234,7 +1239,7 @@ th {
 .footer__copyright-area {
   display: flex;
   margin-top: 6.4vw;
-  margin-bottom: 7.73vw;
+  padding-bottom: 7.73vw;
   justify-content: space-between;
 }
 @media screen and (min-width: 767px) {
@@ -1243,6 +1248,7 @@ th {
     grid-row: 3/4;
     margin-bottom: 0;
     margin-top: 6.042vw;
+    padding-bottom: 0;
   }
 }
 .footer__copyright {
@@ -1366,6 +1372,7 @@ th {
 }
 @media screen and (min-width: 767px) {
   .header__nav-titlearea {
+    font-family: "Lato", sans-serif;
     width: 95.7vw;
     height: clamp(52px, 3.82vw, 55px);
     font-size: clamp(0.725rem, 0.972vw, 0.875rem);
@@ -1464,7 +1471,7 @@ th {
 .header__hamburger:before {
   position: absolute;
   top: 1.47vw;
-  height: 0.267vw;
+  height: 1px;
   content: "";
   background-color: #222222;
   width: 4.53vw;
@@ -1473,7 +1480,7 @@ th {
 .header__hamburger:after {
   position: absolute;
   top: 2.6vw;
-  height: 0.267vw;
+  height: 1px;
   content: "";
   background-color: #222222;
   width: 4.53vw;
@@ -1673,7 +1680,7 @@ th {
   border-radius: 50%;
   background-color: #222222;
   position: absolute;
-  top: var(--dot-top, 0.5rem);
+  top: var(--dot-top);
   right: 0.5rem;
 }
 .header__scroll-text {
